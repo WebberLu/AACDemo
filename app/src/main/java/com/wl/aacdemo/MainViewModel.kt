@@ -2,13 +2,14 @@ package com.wl.aacdemo
 
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
+import androidx.lifecycle.ViewModel
 import com.wl.aacdemo.DataModel.onDataReadyCallback
 
 
 /**
  * Created by KY5680 on 26,08,2020
  */
-class MainViewModel {
+class MainViewModel : ViewModel() {
 
     val mData = ObservableField<String>()
 
