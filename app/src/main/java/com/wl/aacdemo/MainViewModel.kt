@@ -1,7 +1,6 @@
 package com.wl.aacdemo
 
 import androidx.databinding.ObservableBoolean
-import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wl.aacdemo.DataModel.onDataReadyCallback
@@ -12,7 +11,9 @@ import com.wl.aacdemo.DataModel.onDataReadyCallback
  */
 class MainViewModel : ViewModel() {
 
-    lateinit var mData : MutableLiveData<String>
+    var mData: MutableLiveData<String> = MutableLiveData()
+
+    var mToastText: SingleLiveEvent<String> = SingleLiveEvent()
 
     val isLoading = ObservableBoolean(false)
 
@@ -24,6 +25,7 @@ class MainViewModel : ViewModel() {
         dataModel.retrieveData(object : onDataReadyCallback {
             override fun onDataReady(data: String?) {
                 mData.postValue(data)
+                mToastText.postValue(data)
                 isLoading.set(false)
             }
         })
