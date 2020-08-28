@@ -1,4 +1,4 @@
-package com.wl.aacdemo
+package com.wl.aacdemo.util
 
 import android.util.Log
 import androidx.annotation.MainThread
