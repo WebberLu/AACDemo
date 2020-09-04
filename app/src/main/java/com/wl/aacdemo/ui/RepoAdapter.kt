@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.wl.aacdemo.data.model.Repo
 import com.wl.aacdemo.databinding.RepoItemBinding
 
@@ -17,7 +16,12 @@ class RepoAdapter constructor(private val items: MutableList<Repo>?) :
 
     class RepoViewHolder(val binding: RepoItemBinding) : RecyclerView.ViewHolder(
         binding.root
-    )
+    ) {
+        fun bind(repo: Repo?) {
+            binding.repo = repo
+            binding.executePendingBindings()
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -27,12 +31,7 @@ class RepoAdapter constructor(private val items: MutableList<Repo>?) :
 
     override fun onBindViewHolder(holder: RepoViewHolder, position: Int) {
         val repo = items!![position]
-        Glide.with(holder.itemView.context)
-            .load(repo.owner!!.avatarUrl)
-            .into(holder.binding.ownerAvatar)
-        holder.binding.name.text = repo.fullName
-        holder.binding.desc.text = repo.description
-        holder.binding.stars.text = "" + repo.stars
+        holder.bind(repo)
     }
 
     override fun getItemCount(): Int {

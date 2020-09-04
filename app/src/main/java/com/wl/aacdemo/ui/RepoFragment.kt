@@ -21,6 +21,9 @@ class RepoFragment : Fragment() {
 
     companion object {
         const val TAG = "Repo"
+        fun newInstance(): RepoFragment? {
+            return RepoFragment()
+        }
     }
 
     private lateinit var binding: RepoFragmentBinding
@@ -31,9 +34,6 @@ class RepoFragment : Fragment() {
 
     private var repoAdapter: RepoAdapter = RepoAdapter(ArrayList())
 
-    fun newInstance(): RepoFragment? {
-        return RepoFragment()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

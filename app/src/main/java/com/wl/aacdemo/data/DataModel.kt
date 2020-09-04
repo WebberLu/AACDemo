@@ -29,7 +29,7 @@ class DataModel {
             }
 
             override fun onFailure(call: Call<RepoSearchResponse>, t: Throwable) {
-                TODO("Not yet implemented")
+                // TODO("Not yet implemented")
             }
         })
     }

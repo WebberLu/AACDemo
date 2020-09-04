@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         val tag: String = RepoFragment.TAG
 
         if (supportFragmentManager.findFragmentByTag(tag) == null) {
-            val fragment = RepoFragment().newInstance()
+            val fragment = RepoFragment.newInstance()
             fragment?.let {
                 supportFragmentManager.beginTransaction()
                     .add(R.id.container, it, tag)

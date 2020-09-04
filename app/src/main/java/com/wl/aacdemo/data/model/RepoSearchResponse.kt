@@ -31,37 +31,3 @@ class RepoSearchResponse {
         this.items = items
     }
 }
-
-class Repo {
-
-    val id = 0
-
-    @SerializedName("name")
-    @NonNull
-    val name: String? = null
-
-    @SerializedName("full_name")
-    val fullName: String? = null
-
-    @SerializedName("description")
-    val description: String? = null
-
-    @SerializedName("stargazers_count")
-    val stars = 0
-
-    @SerializedName("owner")
-    val owner: Owner? = null
-
-}
-
-class Owner {
-    @SerializedName("login")
-    val login: String? = null
-
-    @SerializedName("avatar_url")
-    val avatarUrl: String? = null
-
-    @SerializedName("url")
-    val url: String? = null
-
-}

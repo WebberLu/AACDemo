@@ -1,5 +1,7 @@
 package com.wl.aacdemo.ui
 
+import android.view.View
+import androidx.databinding.BindingAdapter
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -27,5 +29,4 @@ class RepoViewModel(private var dataModel: DataModel) : ViewModel() {
             }
         })
     }
-
 }
